@@ -1,0 +1,20 @@
+// Last updated: 7/14/2026, 2:17:43 PM
+class Solution {
+    public int diagonalSum(int[][] mat)   
+    {
+       int sum = 0;
+       int n=mat.length;
+       for(int i=0;i<mat.length;i++)
+       {
+        for(int j=0;j<mat.length;j++)
+        {
+            if(i==j||j==n-i-1){
+                sum=sum+mat[i][j];
+            }   
+        }
+       }
+       return sum;
+
+        
+    }
+}
