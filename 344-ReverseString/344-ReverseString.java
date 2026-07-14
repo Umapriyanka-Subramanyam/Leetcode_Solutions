@@ -1,0 +1,15 @@
+// Last updated: 7/14/2026, 2:18:26 PM
+class Solution {
+    public void reverseString(char[] s) {
+        String str = new String(s);
+        String ans = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            ans += str.charAt(i);
+        }
+
+        for (int i = 0; i < s.length; i++) {
+            s[i] = ans.charAt(i);
+        }
+    }
+}
