@@ -1,0 +1,25 @@
+// Last updated: 7/14/2026, 2:20:01 PM
+class Solution 
+{
+    public boolean isValid(String s) 
+    {
+      Stack<Character> stack=new Stack<>();  
+      for(int i=0;i<s.length();i++){
+          char curr=s.charAt(i);
+          if(!stack.isEmpty()){
+            char last=stack.peek();
+            if(isPair(last,curr)){
+                stack.pop();
+                continue;
+            }
+          }
+          stack.push(curr);
+      } 
+      return stack.isEmpty();
+    }
+    private boolean isPair(char last,char curr){
+        return(last=='('&& curr==')')||
+              (last=='{'&& curr=='}')||
+              (last=='['&& curr==']');
+    }
+}
