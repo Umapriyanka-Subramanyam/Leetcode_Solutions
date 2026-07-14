@@ -1,0 +1,17 @@
+// Last updated: 7/14/2026, 2:17:59 PM
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        int temp=0;
+        for(int i=0;i<nums.length;i++){
+            for(int j=0;j<nums.length-i-1;j++){
+                if(nums[j]%2>nums[j+1]%2){
+                    temp=nums[j];
+                    nums[j]=nums[j+1];
+                    nums[j+1]=temp;
+                }
+            }
+        }
+        
+        return nums;  
+    }
+}
